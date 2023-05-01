@@ -1,8 +1,8 @@
 import * as THREE from "three";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js";
 import * as dat from "lil-gui";
-import testVertexShader from "./shaders/vertex.glsl";
-import testFragmentShader from "./shaders/fragment.glsl";
+import vertexShader from "./shaders/vertex.glsl";
+import fragmentShader from "./shaders/fragment.glsl";
 
 /**
  * Base
@@ -33,8 +33,8 @@ geometry.setAttribute("aRandom", new THREE.BufferAttribute(randoms, 1));
 
 // Material
 const material = new THREE.ShaderMaterial({
-  vertexShader: testVertexShader,
-  fragmentShader: testFragmentShader,
+  vertexShader: vertexShader,
+  fragmentShader: fragmentShader,
   side: THREE.DoubleSide,
   wireframe: false,
   uniforms: {
