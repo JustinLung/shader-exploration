@@ -8,7 +8,7 @@ import fragmentShader from "./shaders/fragment.glsl";
  * Base
  */
 // Debug
-const gui = new dat.GUI();
+// const gui = new dat.GUI();
 
 // Canvas
 const canvas = document.querySelector("canvas.webgl");
@@ -21,6 +21,8 @@ const scene = new THREE.Scene();
  */
 // Geometry
 const geometry = new THREE.PlaneGeometry(1, 1, 32, 32);
+
+console.log(geometry)
 
 const count = geometry.attributes.position.count;
 const randoms = new Float32Array(count);
