@@ -7,9 +7,10 @@ varying float vRandom;
 void main()
 {
     vec4 modelPosition = modelMatrix * vec4(position, 1.5);
-    modelPosition.z += cos(modelPosition.x * uFrequency.x - uTime) * 0.02;
-    modelPosition.z += cos(modelPosition.z * uFrequency.y - uTime) * 0.001;
-    modelPosition.z += aRandom * 0.1;
+    modelPosition.y += sin(modelPosition.x * uFrequency.x - aRandom) * 0.02;
+    modelPosition.z += sin(modelPosition.x * uFrequency.x - uTime) * 0.05;
+    modelPosition.x += sin(modelPosition.z * uFrequency.y - aRandom) * 0.01;
+    modelPosition.z += sin(aRandom * 0.2) * 1.0;
 
     vec4 viewPosition = viewMatrix * modelPosition;
     vec4 projectedPosition = projectionMatrix * viewPosition;
