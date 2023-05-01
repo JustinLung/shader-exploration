@@ -22,8 +22,6 @@ const scene = new THREE.Scene();
 // Geometry
 const geometry = new THREE.PlaneGeometry(1, 1, 32, 32);
 
-console.log(geometry)
-
 const count = geometry.attributes.position.count;
 const randoms = new Float32Array(count);
 
@@ -40,12 +38,12 @@ const material = new THREE.ShaderMaterial({
   side: THREE.DoubleSide,
   wireframe: false,
   uniforms: {
-    uFrequency: { value: new THREE.Vector2(10, 5) },
+    uFrequency: { value: new THREE.Vector2(10, 6) },
     uTime: {
         value: 0
     }
   },
-});
+  });
 
 // Mesh
 const mesh = new THREE.Mesh(geometry, material);
